@@ -9,8 +9,8 @@ import { useState } from 'react';
 const WrapperPageContent = styled.div`
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    /* min-height: 100vh; */
+    justify-content: space-between;
+    min-height: 100vh;
 `
 
 const HeaderContent = styled.div`
@@ -24,6 +24,7 @@ const HeaderContent = styled.div`
 const MapAndList = styled.div`
   display: flex;
   margin-top: 15px;
+  height: calc(100vh - 300px);
 `;
 
 const List = styled.div`
@@ -35,8 +36,8 @@ const List = styled.div`
   flex-grow: 1;
   scroll-behavior: smooth;
   width: 450px;
-  height: calc(100vh - 300px);
-  background-color: #ebebeb;
+  height: 100%;
+  background-color: #f8f8f8;
 `; 
 
 const Cards = styled.div`
@@ -57,9 +58,8 @@ const Cards = styled.div`
 const MapContainerStyled = styled.div`
   z-index: 0;
   overflow: hidden;
-  border: 1px solid white;
   width: 70%;
-  height: calc(100vh - 300px);
+  height: 100%;
   background-color: green;
 `;
 
