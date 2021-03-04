@@ -36,10 +36,11 @@ const List = styled.div`
   scroll-behavior: smooth;
   width: 450px;
   height: calc(100vh - 300px);
+  background-color: #ebebeb;
 `; 
 
 const Cards = styled.div`
-  min-height: 90px;
+  min-height: ${props => props.selectedCard === props.currentCard ? "180px" : "90px"};
   width: 80%;
   background-color: blue;
   margin: 10px 0;
@@ -69,10 +70,24 @@ const Red = styled.div`
   margin: 10px 0;
 `
 
+const ContentInput = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 69px;
+  width: 100%;
+`
+
+const InputText = styled.input`
+  width: 100%;
+  margin: 0 10px;
+  height: 39px;
+`
 
 
 const App = () =>  {
   const [plan, setPlan] = useState(["plan", 'plan'])
+  const [selectedCard, setSelectedCard] = useState()
   const [content] = useState(['content','content','content','content','content','content','content','content','content','content','content','content','content','content','content','content','content','content','content','content', ])
 
 
@@ -91,9 +106,14 @@ const App = () =>  {
         <MapAndList>
           <MapContainerStyled />
           <List>
-            {content.map(() => {
+            <ContentInput>
+              <InputText type="text"/>
+            </ContentInput>
+            {content.map((item, i) => {
               return(
-                <Cards />
+                <Cards currentCard={i} selectedCard={selectedCard} key={i} onClick={() => {
+                    setSelectedCard(i)
+                  }} />
               )
             })}
           </List>
