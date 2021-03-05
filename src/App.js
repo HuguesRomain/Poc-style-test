@@ -37,6 +37,7 @@ const List = styled.div`
   flex-grow: 1;
   scroll-behavior: smooth;
   height: 100%;
+  width: 450px;
   background-color: #f8f8f8;
 `; 
 
@@ -84,10 +85,10 @@ const InputText = styled.input`
   height: 39px;
 `
 
-const Switcher = styled.button`
-  max-width: 100px;
-  height: 20px;
-`
+// const Switcher = styled.button`
+//   max-width: 100px;
+//   height: 20px;
+// `
 
 const ExtendCard = styled.div`
   display: ${props => props.selectedCard ? "block" : "none"};
@@ -103,7 +104,7 @@ const App = () =>  {
   const [plan, setPlan] = useState(["plan", 'plan'])
   const [selectedCard, setSelectedCard] = useState()
   const [content] = useState(['content','content','content','content','content','content','content','content','content','content','content','content','content','content','content','content','content','content','content','content', ])
-  const [isDiv, setIsDiv] = useState(true)
+  const [isDiv] = useState(true)
 
   return (
     <div className="App">
